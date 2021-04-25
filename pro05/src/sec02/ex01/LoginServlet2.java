@@ -19,5 +19,18 @@ public class LoginServlet2 extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		String id = req.getParameter("user_id");
 		String pw = req.getParameter("user_pw");
+		
+		String data = "<html>";
+			data += "<body>";
+			data += "아이디 : " + id;
+			data += "<br>";
+			data += "패스워드 : " + pw;
+			data += "</body>";
+			data += "</html>";
+		out.print(data);
+	}
+	
+	public void destroy() {
+		System.out.println("destroy 메서드 호출");
 	}
 }
